@@ -1,0 +1,22 @@
+{
+    "rootUrl": "http://localhost/tnmk30-course-page",
+    "pages": {
+        "lab1-html": {
+            "name": "HTML"
+        },
+        "lab2-css":
+        {
+            "name": "CSS"
+        },
+        "lab3-js":
+        {
+            "name": "JavaScript"
+        },
+        "lab4-php": {
+            "name": "PHP"
+        },
+        "lab5-mysql": {
+            "name": "MySQL"
+        }
+    }
+}
