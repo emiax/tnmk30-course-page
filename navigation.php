@@ -13,7 +13,7 @@
           <ul class="nav navbar-nav">
    <?php
  foreach ($config["pages"] as $id => $page) {
-   if ($_GET["page"] === $id) {
+   if (isset($_GET["page"]) && $_GET["page"] === $id) {
      echo '<li class="active"><a href="' . $id . '">' . $page["name"] . '</a></li>';
    } else {
      echo '<li class=""><a href="' . $id . '">' . $page["name"] . '</a></li>';
