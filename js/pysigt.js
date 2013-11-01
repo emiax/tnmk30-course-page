@@ -23,7 +23,8 @@
             "festlig",
             "koslig",
             "dælig",
-            "fräsig"
+            "fräsig",
+            "klockren"
         ];
 
         var randomIndex = Math.floor((Math.random()*pysarna.length));
