@@ -1,12 +1,14 @@
 <h1>TNMK30 Laboration 3: JavaScript</h1>
+<h2>Uppgift</h2>
 <p>
-    I den här laborationen ska vi undersöka hur vi kan koda in <em>beteende</em> för en webbsida med scriptspråket JavaScript. Vi har plockat ihop en liten crash course i JavaScript så att vi kan känna oss redo innan vi kör igång på riktigt.
+    I den här laborationen ska vi undersöka hur vi kan koda in <em>beteende</em> för en webbsida med scriptspråket JavaScript.
 </p>
 
-<h2>Föruppgift (behöver ej redovisas)</h2>
+<h2>Var det för svårt?</h2>
 <p>
-    
+    Här finns en crash course att börja med.
 </p>
+<h4>1. Länka in js-filen</h4>
 <p>
     Det första vi behöver göra är att, precis som med css, länka in vår js-fil i html-dokumentet. Vi vill oftast ladda in script sist. Så här kan det se ut:
 </p>
@@ -23,13 +25,15 @@
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
+<h4>2. Se till att ha konsollen öppen</h4>
 <p>
     Att koda JavaScript är ganska likt c++ och det första vi lärde oss i c++ var antagligen att skriva ut saker i kommandotolken med <code>cout</code>. De allra flesta webbläsare har en egen kommandotolk, eller <em>console</em>, som vi kan skriva till. Denna finns under <em>tools</em> (chrome) eller <em>tools &gt; web developer</em> (firefox). Öppna den, så kan vi se vad som händer i vår JavaScript.
 </p>
+<h4>3. C++ till JavaScript</h4>
 <p>
-    Föruppgiften går ut på att översätta ett program skrivet i c++ till JavaScript. Programmet sorterar en array med bubblesort (som vi känner igen från TND012). För att lyckas med en översättning behöver vi lite syntax från JavaScript att jobba med. Testa dem gärna separat och se vad de gör:
+    Vi kan ju redan programmera i c++ så ett naturligt steg är att försöka omsätta den kunskapen till JavaScript. Nedan finns en tabell med standardsyntax. Testa till exempel <code>console.log("Hello World");</code> och se att den skriver ut i konsollen.
 </p>
-<table border="1">
+<table class="table table-bordered">
     <tr>
         <th></th>
         <th>JavaScript</th>
@@ -38,11 +42,11 @@
     <tr>
         <td>Skriva ut saker till konsollen</td>
         <td><code class="prettyprint">console.log("Hello World");</code></td>
-        <td><code class="prettyprint">cout &lt;&lt; "Hello World";</code></td>
+        <td><code class="prettyprint">cout &lt;&lt; "Hello World" &lt;&lt; endl;</code></td>
     </tr>
     <tr>
         <td>Deklarera variabel</td>
-        <td><code class="prettyprint">var myVar = 1; myVar = "hej";</code></td>
+        <td><code class="prettyprint">var myNumber = 1; var myString = "hej";</code></td>
         <td><code class="prettyprint">int myInt = 1; string myString = "hej";</code></td>
     </tr>
     <tr>
@@ -53,16 +57,37 @@
     <tr>
         <td>for-loopar</td>
         <td><code class="prettyprint">for(var i = 0; i &lt; arr.length; i++){}</code></td>
-        <td><code class="prettyprint">for(int i = 0; i &lt; howMany; i++){}</code></td>
+        <td><code class="prettyprint">for(int i = 0; i &lt; size; i++){}</code></td>
     </tr>
     <tr>
         <td>Funktioner</td>
-        <td><code class="prettyprint">function foo(myVar){}</code></td>
+        <td><code class="prettyprint">function foo(myNumber){}</code></td>
         <td><code class="prettyprint">void foo(int myInt){}</code></td>
     </tr>
     <tr>
         <td>Object/Struct</td>
         <td><code class="prettyprint">var p = { name: "Arbar", age: 32 };</code></td>
-        <td><code class="prettyprint">struct Person { string name; int age; }; Person p; p.name = "Arbar"; p.age = 32;</code></td>
+        <td><code class="prettyprint">struct Person { string name; int age; };</code>
+            <code class="prettyprint">Person p; p.name = "Arbar"; p.age = 32;</code></td>
     </tr>
 </table>
+<h4>4. Ett program i C++</h4>
+<p>
+    Nedan finns ett enkelt program skrivet i c++ som skriver ut en array. Översätt det till JavaScript.
+</p>
+<pre class="prettyprint">
+#include &lt;iostream&gt;
+using namespace std;
+
+void printArray(int array[], int size)
+{
+  for (int i = 0; i &lt; size; i++) {
+    cout &lt;&lt; array[i] &lt;&lt; endl;
+  }
+}
+
+int main() {
+  int foo[] = {1, 3, 3, 7};
+  printArray(foo, 4);
+}
+</pre>
