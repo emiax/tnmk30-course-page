@@ -1,0 +1,68 @@
+<h1>TNMK30 Laboration 3: JavaScript</h1>
+<p>
+    I den här laborationen ska vi undersöka hur vi kan koda in <em>beteende</em> för en webbsida med scriptspråket JavaScript. Vi har plockat ihop en liten crash course i JavaScript så att vi kan känna oss redo innan vi kör igång på riktigt.
+</p>
+
+<h2>Föruppgift (behöver ej redovisas)</h2>
+<p>
+    
+</p>
+<p>
+    Det första vi behöver göra är att, precis som med css, länka in vår js-fil i html-dokumentet. Vi vill oftast ladda in script sist. Så här kan det se ut:
+</p>
+<pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;TNMK30 Lab 3&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- kanske lite html --&gt;
+    &lt;script src="minjavascriptfil.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>
+    Att koda JavaScript är ganska likt c++ och det första vi lärde oss i c++ var antagligen att skriva ut saker i kommandotolken med <code>cout</code>. De allra flesta webbläsare har en egen kommandotolk, eller <em>console</em>, som vi kan skriva till. Denna finns under <em>tools</em> (chrome) eller <em>tools &gt; web developer</em> (firefox). Öppna den, så kan vi se vad som händer i vår JavaScript.
+</p>
+<p>
+    Föruppgiften går ut på att översätta ett program skrivet i c++ till JavaScript. Programmet sorterar en array med bubblesort (som vi känner igen från TND012). För att lyckas med en översättning behöver vi lite syntax från JavaScript att jobba med. Testa dem gärna separat och se vad de gör:
+</p>
+<table border="1">
+    <tr>
+        <th></th>
+        <th>JavaScript</th>
+        <th>Motsvarar (ungefär) c++</th>
+    </tr>
+    <tr>
+        <td>Skriva ut saker till konsollen</td>
+        <td><code class="prettyprint">console.log("Hello World");</code></td>
+        <td><code class="prettyprint">cout &lt;&lt; "Hello World";</code></td>
+    </tr>
+    <tr>
+        <td>Deklarera variabel</td>
+        <td><code class="prettyprint">var myVar = 1; myVar = "hej";</code></td>
+        <td><code class="prettyprint">int myInt = 1; string myString = "hej";</code></td>
+    </tr>
+    <tr>
+        <td>Arrayer</td>
+        <td><code class="prettyprint">var arr = [1, 2, 3];</code></td>
+        <td><code class="prettyprint">int arr[] = {1, 2, 3};</code></td>
+    </tr>
+    <tr>
+        <td>for-loopar</td>
+        <td><code class="prettyprint">for(var i = 0; i &lt; arr.length; i++){}</code></td>
+        <td><code class="prettyprint">for(int i = 0; i &lt; howMany; i++){}</code></td>
+    </tr>
+    <tr>
+        <td>Funktioner</td>
+        <td><code class="prettyprint">function foo(myVar){}</code></td>
+        <td><code class="prettyprint">void foo(int myInt){}</code></td>
+    </tr>
+    <tr>
+        <td>Object/Struct</td>
+        <td><code class="prettyprint">var p = { name: "Arbar", age: 32 };</code></td>
+        <td><code class="prettyprint">struct Person { string name; int age; }; Person p; p.name = "Arbar"; p.age = 32;</code></td>
+    </tr>
+</table>

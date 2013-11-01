@@ -1,7 +1,11 @@
 (function() {
 
     var element = document.getElementById('pys-me');
-    console.log("hej");
+
+    console.log("Hej! Vad roligt att du har hittat hit.");
+    console.log("Här i konsollen kan du köra javascript live.");
+    console.log("Testa till exempel att skriva:");
+    console.log("\'var fem = 5;\' och sedan till exempel \'fem + 1\'.");
 
     if(element) {
         var pysarna = [
