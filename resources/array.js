@@ -11,6 +11,4 @@ function printArray(array)
 
 
 var foo = [1, 3, 3, 7];
-printArray(foo, 5);
-
-
+printArray(foo);
