@@ -1,2 +1,4 @@
+Options -MultiViews
+RewriteBase /
 RewriteEngine On
-RewriteRule ^[a-zA-Z0-9\-]*$ index.php?page=$0 [L,QSA]
+RewriteRule ^[a-zA-Z0-9\-]*$ /TNMK30/tnmk30-course-page/index.php?page=$0 [L,QSA]

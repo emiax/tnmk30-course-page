@@ -1,5 +1,5 @@
 {
-    "rootUrl": "http://localhost/tnmk30-course-page",
+    "rootUrl": "http://localhost/TNMK30/tnmk30-course-page/",
     "pages": {
         "lab1-html": {
             "name": "HTML"
