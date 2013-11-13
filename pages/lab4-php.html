@@ -1,0 +1,131 @@
+<h1>TNMK30 Laboration 4: PHP</h1>
+
+<p>
+    Den här laborationen går ut på att programmera en gästbok i serverscriptspråket PHP. Ett exempel på hur en sådan kan se ut finns här: <a href="http://jonaszeitler.se/php-lab/">http://jonaszeitler.se/php-lab/</a>. Ni kan förstås göra en <strong>mycket</strong> snyggare gästbok. Eftersom sidan är genererad med PHP på en server går källkoden inte att se från webbläsaren.
+</p>
+<h2>Uppgift</h2>
+<p>
+    För godkänt ska din webbsida:
+</p>
+<ul>
+    <li>
+        Använda en <code>&lt;form&gt;</code> för att skicka post-requests till ett serverscript som sparar gästboksinlägg med (minst) "namn" och "text"
+    </li>
+    <li>
+        Spara gästboks-data i en JSON-fil
+    </li>
+    <li>
+        Använda associativa arrayer i PHP
+    </li>
+    <li>
+        Separera PHP och HTML i olika filer (så långt det går)
+    </li>
+    <li>
+        Använda ett separat CSS-stylesheet
+    </li>
+</ul>
+<p>
+    Redovisa för en labbassistent.
+</p>
+<h2>Referensmaterial</h2>
+<p>
+    Nedan finns två tabeller med php-syntax som referens inför labben.
+</p>
+<p><em>PHP vs. C++</em></p>
+<table class="table table-bordered">
+    <tr>
+        <th></th>
+        <th>PHP</th>
+        <th>Motsvarar (ungefär) c++</th>
+    </tr>
+    <tr>
+        <td>Skriva ut saker</td>
+        <td>
+            <code class="prettyprint">echo "Hello World";</code>
+            <!-- <code class="prettyprint">var_dump("Hello World");</code> -->
+        </td>
+        <td><code class="prettyprint">cout &lt;&lt; "Hello World";</code></td>
+    </tr>
+    <tr>
+        <td>Deklarera variabel</td>
+        <td><code class="prettyprint">$myInt = 1; $myString = "hej";</code></td>
+        <td><code class="prettyprint">int myInt = 1; string myString = "hej";</code></td>
+    </tr>
+    <tr>
+        <td>Arrayer</td>
+        <td><code class="prettyprint">$arr = [1, 2, 3]; $arr = array();</code></td>
+        <td><code class="prettyprint">int arr[] = {1, 2, 3}; int arr[3];</code></td>
+    </tr>
+    <tr>
+        <td>for-loopar</td>
+        <td>
+            <code class="prettyprint">for($i = 0; $i &lt; count($arr); $i++) {}</code>
+            <code class="prettyprint">foreach($arr as $element) {}</code>
+        </td>
+        <td><code class="prettyprint">for(int i = 0; i &lt; size; i++) {}</code></td>
+    </tr>
+    <tr>
+        <td>Funktioner</td>
+        <td><code class="prettyprint">function foo($myInt) {}</code></td>
+        <td><code class="prettyprint">void foo(int myInt) {}</code></td>
+    </tr>
+    <tr>
+        <td>Associativ array/Struct</td>
+        <td><code class="prettyprint">$p = [ "name" => "Arbar", "age" => 32 ];</code></td>
+        <td><code class="prettyprint">struct Person { string name; int age; };</code>
+            <code class="prettyprint">Person p; p.name = "Arbar"; p.age = 32;</code></td>
+    </tr>
+</table>
+
+<p><em>PHP-funktioner</em></p>
+<table class="table table-bordered">
+    <tr>
+        <th>Funktion</th><th>Detaljer</th>
+    </tr>
+    <tr>
+        <td>
+            <code class="prettyprint">var_dump($arr);</code>
+            <code class="prettyprint">print_r($arr);</code>
+        </td>
+        <td>Skriver ut en variabel (exvis en array) utan att explicit behöva loopa över den. OBS! fungerar kanske inte i skolan</td>
+    </tr>
+    <tr>
+        <td><code class="prettyprint">file_get_contents($filename);</code></td>
+        <td>Läser in en fil. Returnerar en sträng</td>
+    </tr>
+    <tr>
+        <td><code class="prettyprint">file_put_contents($filename, $content);</code></td>
+        <td>Skriver till fil</td>
+    </tr>
+    <tr>
+        <td>
+            <code class="prettyprint">$json_string = json_encode($assoc_arr);</code>
+            <code class="prettyprint">$assoc_arr = json_decode($json_string, true);</code>
+        </td>
+        <td>Konverteringar mellan JSON-sträng och associativ array</td>
+    </tr>
+    <tr>
+        <td>
+            <code class="prettyprint">array_push($arr, $new_element);</code>
+            <code class="prettyprint">$arr[] = $new_element;</code>
+        </td>
+        <td>Lägger till ett element sist i en array. I PHP kan man (självklart :) ) lägga till arrayer i arrayer.</td>
+    </tr>
+</table>
+<p>
+    En enkel arkitektur över gästboken kan se ut så här, ni får gärna använda den om ni vill:
+</p>
+<img src="resources/guestbook-system.png"
+     alt="systemarkitektur"
+     height="300px" />
+<p>
+    <strong>Tips:</strong> Implementera en del i taget. Testa till exempel att först läsa in en vanlig textfil i <em>index.php</em> och skriv ut på skärmen. Ändra sedan till en JSON-fil och associativa arrayer. Flytta sedan koden till <em>entries.php</em> osv. Testa er fram och använd labbassistenten för att diskutera olika lösningsmetoder.
+</p>
+<h4>Läs- och skrivrättigheter</h4>
+<p>För att ett PHP-script ska kunna använda en fil så måste servern ha läs-/skrivrättigheter till filen.
+<ol>
+    <li>Högerklicka på filen (<em>guestbook_data.json</em>) och välj <em>egenskaper</em></li>
+    <li>Välj fliken <em>Säkerhet</em> och markera <em>alla</em></li>
+    <li>Klicka på <em>Redigera</em></li>
+    <li>Kryssa i båda rutorna <em>läsa</em> och <em>skriva</em></li>
+</ol>
