@@ -15,6 +15,9 @@
         "lab4-php": {
             "name": "PHP"
         },
+        "extra-ajax": {
+            "name": "AJAX"
+        },
         "lab5-mysql": {
             "name": "MySQL"
         }
